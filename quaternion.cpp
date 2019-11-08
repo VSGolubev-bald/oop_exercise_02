@@ -29,7 +29,7 @@ quaternion quaternion::operator-(const quaternion &a) {
 quaternion quaternion::operator*(const quaternion &b) {
     quaternion res;
     res.array[0] = array[0] * b.array[0] - array[1] * b.array[1] - array[2] * b.array[2] - array[3] * b.array[3];
-    res.array[1] = array[0] * b.array[1] + array[1] * b.array[0] + array[2] * b.array[3] - array[3] - b.array[2];
+    res.array[1] = array[0] * b.array[1] + array[1] * b.array[0] + array[2] * b.array[3] - array[3] * b.array[2];
     res.array[2] = array[0] * b.array[2] + array[2] * b.array[0] + array[3] * b.array[1] - array[1] * b.array[3];
     res.array[3] = array[0] * b.array[3] + array[3] * b.array[0] +  array[1] * b.array[2] - array[2] * b.array[1];
     return res;
@@ -52,9 +52,7 @@ quaternion quaternion::operator/(const quaternion &b) {
     for (int i = 0; i < 4; ++i) {
         reverse.array[i] = conjugate.array[i] / (VectNorm * VectNorm);
     }
-    for (int i = 0; i < 4; ++i) {
-        res.array[i] = array[i] * reverse.array[i];
-    }
+    res = operator*(reverse);
     return res;
 }
 
