@@ -1,7 +1,7 @@
 //
 // Created by Вова on 28.10.2019.
 //
-
+#include <iostream>
 #ifndef LAB2_QUATERNION_HPP
 #define LAB2_QUATERNION_HPP
 struct quaternion {
