@@ -16,4 +16,8 @@ struct quaternion {
 private:
     double array[4];
 };
+quaternion operator"" _i(long double);
+quaternion operator"" _j(long double);
+quaternion operator"" _k(long double);
+
 #endif //LAB2_QUATERNION_HPP

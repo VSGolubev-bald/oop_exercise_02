@@ -66,3 +66,16 @@ std::istream &operator>>(std::istream &in, quaternion &a) {
     in >> a.array[0] >> a.array[1] >> a.array[2] >> a.array[3];
     return in;
 }
+quaternion operator"" _i(long double i) {
+    quaternion res{0, (double) i, 0, 0};
+    return res;
+}
+
+quaternion operator"" _j(long double j) {
+    quaternion res(0, 0, (double) j, 0);
+    return res;
+}
+quaternion operator"" _k(long double k) {
+    quaternion res(0, 0, 0, (double) k);
+    return res;
+}
